@@ -61,4 +61,13 @@ describe('RPG', ()=>{
     expect(thief.dexterity).toEqual(10);
     expect(thief.characterClass).toBe('thief');
   });
+
+  test('should assign abilities to each class', ()=>{
+    expect(warrior.powerSmash()).toBeDefined();
+    expect(warrior.doubleStrike()).toBeDefined();
+    expect(wizard.fireball()).toBeDefined();
+    expect(wizard.lightningBolt()).toBeDefined();
+    expect(thief.riposte()).toBeDefined();
+    expect(thief.sneakyStab()).toBeDefined();
+  });
 });
