@@ -91,6 +91,16 @@ class Character {
     this.protection -= item.protection;
   }
 
+  findEquip(slot) {
+    if (slot === 'weaponHand') {
+      return this.weaponHand;
+    } else if (slot === 'shieldHand') {
+      return this.shieldHand;
+    } else if (slot === 'armor') {
+      return this.armor;
+    }
+  }
+
   usePotion(potion) {
     this.healDamage(potion.heal);
     this.stamina += potion.staminaHeal;

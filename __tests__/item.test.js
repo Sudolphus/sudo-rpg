@@ -117,4 +117,9 @@ describe ('RPG Items', ()=> {
     expect(warrior.inventory.includes(healingPotion)).toBe(false);
     expect(warrior.inventory.includes(healingPotion2)).toBe(true);
   });
+
+  test('should retrieve equipped objects by item slot', ()=>{
+    warrior.equip(sword);
+    expect(warrior.findEquip('weaponHand')).toMatchObject(sword);
+  });
 });
