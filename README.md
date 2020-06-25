@@ -17,8 +17,9 @@ _This is an attempt at building an RPG browser game. A player should be able to 
 | **Program assigns basic abilities for all characters** | None | Character = {attack(); block();} |
 | **Program allows for warrior, thief, and wizard object that extend character objects** | None | Warrior = {} |
 | **Program allows user to select a class, and adds that class to the Game object** | User selects Warrior | Game = {playerCharacter = Warrior {}} |
-| **Program sets statistics based on the class** | None | Warrior = {HP = 20, Strength = 10, Intelligence = 3, Dexterity = 8} |
+| **Program sets statistics based on the class** | None | Warrior = {HP = 20, Stamina = 10, Strength = 10, Intelligence = 3, Dexterity = 8} |
 | **Program sets abilities based on the class** | None | Warrior = {... powerSmash() doubleStrike()} |
+| **Program allows for basic abilites for characters regardless of class** | None | Warrior = {... attack(); block();} |
 
 
 ## Setup/Installation Requirements

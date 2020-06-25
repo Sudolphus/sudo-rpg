@@ -4,9 +4,11 @@ import { Character } from './../src/character.js';
 
 describe('RPG', ()=>{
   let game;
+  let character;
 
   beforeEach(()=>{
     game = new Game();
+    character = new Character();
   });
 
   test('should create a game object', ()=>{
