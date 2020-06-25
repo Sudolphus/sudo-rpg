@@ -72,7 +72,7 @@ describe('RPG', ()=>{
   });
 
   test('ensure that each character inherited abilities properly', ()=>{
-    expect(warrior.attack()).toEqual(10);
+    expect(warrior.attack()).toBeTruthy();
   });
 
   test('should allow characters to take damage', ()=>{
@@ -95,5 +95,9 @@ describe('RPG', ()=>{
   test('should detect if a player is defeated', ()=>{
     warrior.takeDamage(20);
     expect(warrior.isDefeated()).toBe(true);
+  });
+
+  test('should detect if a player has an inventory', ()=>{
+    expect(warrior.inventory).toBeDefined();
   });
 });

@@ -23,6 +23,11 @@ _This is an attempt at building an RPG browser game. A player should be able to 
 | **Program allows characters to take damage** | Player attacked for 5 | Warrior = {HP = 15..} |
 | **Program allows characters to heal damage, up to their maximum hp** | Player healed for 5 | Warrior = {HP = 20..}|
 | **Program detects if a player has been defeated** | Player hp = 0 | "You Have Been Defeated!" |
+| **Program tracks player inventory** | None | Warrior = {.. inventory = {} ..} |
+| **Program adds items to inventory** | Player picks up sword | Warrior = {.. inventory = {sword} ..} |
+| **Program removes items from inventory** | Player drops sword | Warrior = {.. inventory = {} ..} |
+| **Program allows equipping items** | Player equips sword | Warrior = {.. inventory = {}, equipment = {} ..} |
+| **Program updates abilities based on equipment** | Player attacks while sword equipped | Damage = Damage + 2 |
 
 ## Setup/Installation Requirements
 
