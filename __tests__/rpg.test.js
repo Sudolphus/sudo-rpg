@@ -70,4 +70,8 @@ describe('RPG', ()=>{
     expect(thief.riposte()).toBeDefined();
     expect(thief.sneakyStab()).toBeDefined();
   });
+
+  test('ensure that each character inherited abilities properly', ()=>{
+    expect(warrior.attack()).toEqual(10);
+  });
 });
