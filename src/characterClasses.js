@@ -45,6 +45,10 @@ export class Character {
       return false;
     }
   }
+
+  addToInventory(item) {
+    this.inventory.push(item);
+  }
 }
 
 export class Warrior extends Character {
