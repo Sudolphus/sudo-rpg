@@ -100,4 +100,9 @@ describe('RPG', ()=>{
   test('should detect if a player has an inventory', ()=>{
     expect(warrior.inventory).toBeDefined();
   });
+
+  test('should add objects to inventory', ()=>{
+    warrior.addToInventory('Sword');
+    expect(warrior.inventory[0]).toBe('Sword');
+  });
 });
