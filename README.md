@@ -32,6 +32,10 @@ _This is an attempt at building an RPG browser game. A player should be able to 
 | **Program allows unequipping items** | Player unequips sword | Warrior = {.. inventory = {sword}, equipment = {} ..} |
 | **Program swaps items if equipping to a filled slot** | Player equips axe while sword equipped | Warrior = {.. inventory = {sword}, weapon = {axe} ..} |
 | **Program updates abilities based on equipment** | Player attacks while sword equipped | Damage = Damage + 2 |
+| **Program can create enemies with attributes** | None | Enemy = {Strength = 5; HP = 10} |
+| **Enemies can deal damage** | Enemy with strength 10 attacks | Player takes 10 damage |
+| **Enemies can take damage** | Player attacks for 10 damage | Enemy = {.. HP = 0} |
+| **Enemies are removed when HP = 0** | Enemy HP = 0 | Enemy removed from Game |
 
 ## Setup/Installation Requirements
 
