@@ -91,4 +91,9 @@ describe('RPG', ()=>{
     warrior.healDamage(12);
     expect(warrior.hp).toEqual(20);
   });
+
+  test('should detect if a player is defeated', ()=>{
+    warrior.takeDamage(20);
+    expect(warrior.isDefeated()).toBe(true);
+  });
 });

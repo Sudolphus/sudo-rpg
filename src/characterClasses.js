@@ -36,6 +36,14 @@ export class Character {
       this.hp += heal;
     }
   }
+
+  isDefeated() {
+    if (this.hp <= 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 export class Warrior extends Character {
