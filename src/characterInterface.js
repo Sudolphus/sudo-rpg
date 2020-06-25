@@ -23,9 +23,9 @@ function listEquippedItems(game) {
 function buildInventoryItemHTML(item) {
   let itemHTML = `<li><i>${item.name}</i></p>`;
   if (/potion/i.test(item.name)) {
-    itemHTML += `<button class='btn usePotion'>Drink Potion</button>`;
+    itemHTML += `<button class='btn usePotion' id='${item.name}'>Drink Potion</button>`;
   } else {
-    itemHTML += `<button class='btn equipItem'>Equip Item</button>`;
+    itemHTML += `<button class='btn equipItem' id='${item.name}'>Equip Item</button>`;
   }
   return itemHTML;
 }
@@ -43,6 +43,28 @@ function listInventoryItems(inventory) {
   }
 }
 
+function attachEquipListeners(game) {
+  $("#equippedItems").on('click', '.unequipButton', function() {
+    const slot = $(this).attr('id').slice(7);
+    game.characterClass.unequip(game.characterClass.findEquip(slot));
+    refreshCharacterInterface(game);
+  });
+}
+
+function attachInventoryListeners(game) {
+  const inventoryItems = $('#inventoryItems');
+  inventoryItems.on('click', '.usePotion', function() {
+    const potion = game.characterClass.findItem($(this).attr('id'));
+    game.characterClass.usePotion(potion);
+    refreshCharacterInterface(game);
+  });
+  inventoryItems.on('click', '.equipItem', function() {
+    const item = game.characterClass.findItem($(this).attr('id'));
+    game.characterClass.equip(item);
+    refreshCharacterInterface(game);
+  });
+}
+
 export function refreshCharacterInterface(game) {
   const characterInterface = $("#characterInterface");
   characterInterface.empty();
@@ -55,6 +77,6 @@ export function refreshCharacterInterface(game) {
   listEquippedItems(game);
   characterInterface.append(`<p>Inventory: </p><ul id='inventoryItems'></ul>`);
   listInventoryItems(game.characterClass.inventory);
-  attachEquipListeners();
-  attachInventoryListeners();
+  attachEquipListeners(game);
+  attachInventoryListeners(game);
 }
