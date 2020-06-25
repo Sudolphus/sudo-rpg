@@ -11,13 +11,36 @@ function equipItemHTML(slot, game) {
   return itemHTML;
 }
 
-function attachEquippedItems(game) {
+function listEquippedItems(game) {
   const weaponHTML = equipItemHTML('weaponHand', game);
   const shieldHTML = equipItemHTML('shieldHand', game);
   const armorHTML = equipItemHTML('armor', game);
   $("#weaponHand").html(weaponHTML);
   $("#shieldHand").html(shieldHTML);
   $("#armor").html(armorHTML);
+}
+
+function buildInventoryItemHTML(item) {
+  let itemHTML = `<li><i>${item.name}</i></p>`;
+  if (/potion/i.test(item.name)) {
+    itemHTML += `<button class='btn usePotion'>Drink Potion</button>`;
+  } else {
+    itemHTML += `<button class='btn equipItem'>Equip Item</button>`;
+  }
+  return itemHTML;
+}
+
+function listInventoryItems(inventory) {
+  const inventoryItems = $("#inventoryItems");
+  if (inventory.length === 0) {
+    inventoryItems.html(`<li><i>None</i></li>`);
+  } else {
+    let inventoryHTML = '';
+    for (const item of inventory) {
+      inventoryHTML += buildInventoryItemHTML(item);
+    }
+    inventoryItems.html(inventoryHTML);
+  }
 }
 
 export function refreshCharacterInterface(game) {
@@ -29,5 +52,9 @@ export function refreshCharacterInterface(game) {
   equippedItems.append(`Weapon Hand: <span id='weaponHand'></span>`);
   equippedItems.append(`Shield Hand: <span id='shieldHand'></span>`);
   equippedItems.append(`Armor: <span id='armor'></span>`);
-  attachEquippedItems(game);
+  listEquippedItems(game);
+  characterInterface.append(`<p>Inventory: </p><ul id='inventoryItems'></ul>`);
+  listInventoryItems(game.characterClass.inventory);
+  attachEquipListeners();
+  attachInventoryListeners();
 }
