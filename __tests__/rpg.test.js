@@ -18,4 +18,9 @@ describe('RPG', ()=>{
   test('should allow for character objects', ()=>{
     expect(character).toBeDefined();
   });
+
+  test('should allow for characters to have basic abilities', ()=>{
+    expect(character.attack()).toBeTruthy();
+    expect(character.block()).toBeTruthy();
+  });
 });
