@@ -40,4 +40,22 @@ describe('RPG', ()=>{
     game.selectClass(warrior);
     expect(game.characterClass).toBe(warrior);
   });
+
+  test('should assign statistics to each class', ()=>{
+    expect(warrior.hp).toEqual(20);
+    expect(warrior.stamina).toEqual(10);
+    expect(warrior.strength).toEqual(10);
+    expect(warrior.intelligence).toEqual(3);
+    expect(warrior.dexterity).toEqual(8);
+    expect(wizard.hp).toEqual(10);
+    expect(wizard.stamina).toEqual(20);
+    expect(wizard.strength).toEqual(3);
+    expect(wizard.intelligence).toEqual(10);
+    expect(wizard.dexterity).toEqual(8);
+    expect(thief.hp).toEqual(15);
+    expect(thief.stamina).toEqual(15);
+    expect(thief.strength).toEqual(6);
+    expect(thief.intelligence).toEqual(5);
+    expect(thief.dexterity).toEqual(10);
+  });
 });
