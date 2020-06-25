@@ -84,5 +84,5 @@ describe('RPG', ()=>{
     warrior.takeDamage(5);
     warrior.healDamage(3);
     expect(warrior.hp).toEqual(18);
-  })
+  });
 });
