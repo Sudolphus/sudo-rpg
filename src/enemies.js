@@ -9,7 +9,10 @@ export class Enemy {
     return this.damageValue;
   }
 
-  takeDamage(damage) {
+  takeDamage(damage, game) {
     this.hp -= damage;
+    if (this.hp <= 0) {
+      game.removeEnemy(this);
+    }
   }
 }

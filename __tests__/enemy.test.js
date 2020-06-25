@@ -4,18 +4,16 @@ import { Enemy } from './../src/enemies.js';
 
 describe ('RPG Enemies', ()=>{
   let game;
-  let enemy;
   let goblin;
 
   beforeEach(()=>{
     game = new Game();
-    enemy = new Enemy();
     goblin = new Enemy('goblin', 5, 8);
+    game.addEnemy(goblin);
   });
 
   test('should allow enemies to be added to the game', ()=>{
-    game.addEnemy(enemy);
-    expect(game.enemies[0]).toMatchObject(enemy);
+    expect(game.enemies[0]).toMatchObject(goblin);
   });
 
   test('enemies should have a name, damage value, and hp', ()=>{
@@ -29,7 +27,12 @@ describe ('RPG Enemies', ()=>{
   });
 
   test('enemies can take damage', ()=>{
-    goblin.takeDamage(3);
+    goblin.takeDamage(3, game);
     expect(goblin.hp).toEqual(5);
+  });
+
+  test('enemies are removed when hp = 0', ()=>{
+    goblin.takeDamage(8, game);
+    expect(game.enemies.length).toEqual(0);
   });
 });
