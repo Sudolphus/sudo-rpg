@@ -37,7 +37,7 @@ describe('RPG', ()=>{
   });
 
   test('should allow for selected class to be added to the Game', ()=>{
-    game.selectClass('warrior');
-    expect(game.class).toBe('warrior');
+    game.selectClass(warrior);
+    expect(game.characterClass).toBe(warrior);
   });
 });
