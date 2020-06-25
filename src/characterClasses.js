@@ -32,7 +32,7 @@ class Character {
   }
 
   takeDamage(damage) {
-    this.hp -= damage;
+    this.hp -= (damage-this.protection);
   }
 
   healDamage(heal) {
@@ -105,10 +105,10 @@ export class Warrior extends Character {
     super(20, 10, 10, 3, 8, 'warrior');
   }
   powerSmash() {
-    return this.strength*2;
+    return this.strength*2+this.damageBonus;
   }
   doubleStrike() {
-    return (this.strength*.5)*2;
+    return (this.strength*.5+this.damageBonus)*2;
   }
 }
 
@@ -117,10 +117,10 @@ export class Wizard extends Character {
     super(10, 20, 3, 10, 8, 'wizard');
   }
   fireball() {
-    return this.intelligence;
+    return this.intelligence+this.damageBonus;
   }
   lightningBolt() {
-    return this.intelligence*2;
+    return this.intelligence*2+this.damageBonus;
   }
 }
 
@@ -129,9 +129,9 @@ export class Thief extends Character {
     super(15, 15, 6, 5, 10, 'thief');
   }
   riposte() {
-    return this.dexterity;
+    return this.dexterity+this.damageBonus;
   }
   sneakyStab() {
-    return this.dexterity;
+    return this.dexterity+this.damageBonus;
   }
 }
