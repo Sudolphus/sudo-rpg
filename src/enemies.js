@@ -4,4 +4,8 @@ export class Enemy {
     this.damageValue = damageValue;
     this.hp = hp;
   }
+
+  attack() {
+    return this.damageValue;
+  }
 }

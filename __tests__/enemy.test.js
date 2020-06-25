@@ -23,4 +23,8 @@ describe ('RPG Enemies', ()=>{
     expect(goblin.damageValue).toBe(5);
     expect(goblin.hp).toBe(8);
   });
+
+  test('enemies should be able to attack', ()=>{
+    expect(goblin.attack()).toEqual(5);
+  });
 });
