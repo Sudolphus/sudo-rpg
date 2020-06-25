@@ -16,19 +16,11 @@ class Character {
   }
 
   attack() {
-    let damage = 0;
-    if (this.strength) {
-      damage += this.strength;
-    }
-    return damage;
+    return this.strength + this.damageBonus;
   }
 
   block() {
-    let defense = 0;
-    if (this.dexterity) {
-      defense += this.dexterity;
-    }
-    return defense;
+    return this.dexterity;
   }
 
   takeDamage(damage) {

@@ -151,5 +151,5 @@ describe('RPG', ()=>{
     warrior.unequip(shield);
     expect(warrior.damageBonus).toEqual(0);
     expect(warrior.protection).toEqual(0);
-  })
+  });
 });
