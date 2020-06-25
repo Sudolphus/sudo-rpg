@@ -16,8 +16,8 @@ describe('RPG', ()=>{
     warrior = new Warrior();
     wizard = new Wizard();
     thief = new Thief();
-    sword = new Equipment('sword', 2, 0, 'weaponHand');
-    shield = new Equipment('shield', 0, 2, 'shieldHand');
+    sword = new Equipment('sword', 2, 0, 'weaponHand', ['warrior', 'thief']);
+    shield = new Equipment('shield', 0, 2, 'shieldHand', ['any']);
   });
 
   test('should create a game object', ()=>{
@@ -116,5 +116,10 @@ describe('RPG', ()=>{
     warrior.equip(shield);
     expect(warrior.weaponHand).toBe(sword);
     expect(warrior.shieldHand).toBe(shield);
+  });
+
+  test('should prevent players from equipping disallowed items', ()=>{
+    wizard.equip(sword);
+    expect(wizard.weaponHand).toBeNull();
   });
 });

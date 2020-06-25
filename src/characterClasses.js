@@ -58,15 +58,17 @@ class Character {
   }
 
   equip(item) {
-    switch (item.slot) {
-    case 'weaponHand':
-      this.weaponHand = item;
-      break;
-    case 'shieldHand':
-      this.shieldHand = item;
-      break;
-    case 'armor':
-      this.armor = item;
+    if (item.allowed.includes(this.characterClass) || item.allowed.includes('any')) {
+      switch (item.slot) {
+      case 'weaponHand':
+        this.weaponHand = item;
+        break;
+      case 'shieldHand':
+        this.shieldHand = item;
+        break;
+      case 'armor':
+        this.armor = item;
+      }
     }
   }
 }
