@@ -136,6 +136,6 @@ export class Thief extends Character {
   }
   sneakyStab() {
     this.stamina -= 1;
-    return this.dexterity+this.damageBonus;
+    return this.dexterity*1.5+this.damageBonus;
   }
 }
