@@ -1,0 +1,29 @@
+body {
+  color: white;
+  background-color: black;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.btn {
+  color: inherit;
+  background-color: inherit;
+  border: .5px solid white;
+}
+
+#gameInterface {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+#characterInterface {
+  border-right: .5px solid white;
+  height: 100%;
+}
+
+#roomInterface {
+  height: 100%;
+}
