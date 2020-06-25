@@ -79,4 +79,10 @@ describe('RPG', ()=>{
     warrior.takeDamage(5);
     expect(warrior.hp).toEqual(15);
   });
+
+  test('should allow characters to heal damage', ()=>{
+    warrior.takeDamage(5);
+    warrior.healDamage(3);
+    expect(warrior.hp).toEqual(18);
+  })
 });
