@@ -118,6 +118,7 @@ describe('RPG', ()=>{
     warrior.equip(shield);
     expect(warrior.weaponHand).toBe(sword);
     expect(warrior.shieldHand).toBe(shield);
+    expect(warrior.inventory.includes(sword)).toBe(false);
   });
 
   test('should prevent players from equipping disallowed items', ()=>{
@@ -129,6 +130,7 @@ describe('RPG', ()=>{
     warrior.equip(sword);
     warrior.unequip(sword);
     expect(warrior.weaponHand).toBeNull();
+    expect(warrior.inventory.includes(sword)).toBe(true);
   });
 
   test('should swap items if equipping to a used slot', ()=>{

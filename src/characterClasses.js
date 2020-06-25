@@ -78,6 +78,7 @@ class Character {
         }
         this.armor = item;
       }
+      this.removeFromInventory(item);
     }
   }
 
@@ -89,6 +90,7 @@ class Character {
     } else if (this.armor === item) {
       this.armor = null;
     }
+    this.addToInventory(item);
   }
 }
 
