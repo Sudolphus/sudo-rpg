@@ -122,4 +122,9 @@ describe ('RPG Items', ()=> {
     warrior.equip(sword);
     expect(warrior.findEquip('weaponHand')).toMatchObject(sword);
   });
+
+  test('should retrieve inventory objects by name', ()=>{
+    warrior.addToInventory(healingPotion);
+    expect(warrior.findItem('healingPotion')).toMatchObject(healingPotion);
+  });
 });

@@ -106,6 +106,14 @@ class Character {
     this.stamina += potion.staminaHeal;
     this.inventory = this.inventory.filter(items => items != potion);
   }
+
+  findItem(itemName) {
+    for (const item of this.inventory) {
+      if (item.name === itemName) {
+        return item;
+      }
+    }
+  }
 }
 
 export class Warrior extends Character {
