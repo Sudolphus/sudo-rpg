@@ -10,6 +10,7 @@ describe('RPG', ()=>{
   let thief;
   let sword;
   let shield;
+  let axe;
 
   beforeEach(()=>{
     game = new Game();
@@ -18,6 +19,7 @@ describe('RPG', ()=>{
     thief = new Thief();
     sword = new Equipment('sword', 2, 0, 'weaponHand', ['warrior', 'thief']);
     shield = new Equipment('shield', 0, 2, 'shieldHand', ['any']);
+    axe = new Equipment('axe', 3, 0, 'weaponHand', ['warrior']);
   });
 
   test('should create a game object', ()=>{
@@ -123,9 +125,16 @@ describe('RPG', ()=>{
     expect(wizard.weaponHand).toBeNull();
   });
 
-  test('should allow unequippling of items', ()=>{
+  test('should allow unequipping of items', ()=>{
     warrior.equip(sword);
     warrior.unequip(sword);
     expect(warrior.weaponHand).toBeNull();
+  });
+
+  test('should swap items if equipping to a used slot', ()=>{
+    warrior.equip(sword);
+    warrior.equip(axe);
+    expect(warrior.weaponHand).toBe(axe);
+    expect(warrior.inventory[0]).toBe(sword);
   });
 });

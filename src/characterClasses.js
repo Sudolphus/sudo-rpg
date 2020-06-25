@@ -61,12 +61,21 @@ class Character {
     if (item.allowed.includes(this.characterClass) || item.allowed.includes('any')) {
       switch (item.slot) {
       case 'weaponHand':
+        if (this.weaponHand) {
+          this.addToInventory(this.weaponHand);
+        }
         this.weaponHand = item;
         break;
       case 'shieldHand':
+        if (this.shieldHand) {
+          this.addToInventory(this.shieldHand);
+        }
         this.shieldHand = item;
         break;
       case 'armor':
+        if (this.armor) {
+          this.addToInventory(this.armor);
+        }
         this.armor = item;
       }
     }
