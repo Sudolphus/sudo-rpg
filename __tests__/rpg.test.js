@@ -1,17 +1,16 @@
 /* eslint-disable no-undef */
 import { Game } from './../src/game.js';
-import { Character, Warrior, Wizard, Thief } from '../src/characterClasses.js';
+import { Warrior, Wizard, Thief } from './../src/characterClasses.js';
+import { Sword } from './../src/items.js';
 
 describe('RPG', ()=>{
   let game;
-  let character;
   let warrior;
   let wizard;
   let thief;
 
   beforeEach(()=>{
     game = new Game();
-    character = new Character();
     warrior = new Warrior();
     wizard = new Wizard();
     thief = new Thief();
@@ -19,15 +18,6 @@ describe('RPG', ()=>{
 
   test('should create a game object', ()=>{
     expect(game).toBeDefined();
-  });
-
-  test('should allow for character objects', ()=>{
-    expect(character).toBeDefined();
-  });
-
-  test('should allow for characters to have basic abilities', ()=>{
-    expect(character.attack()).toBeDefined();
-    expect(character.block()).toBeDefined();
   });
 
   test('should allow for character class objects', ()=>{
@@ -110,5 +100,11 @@ describe('RPG', ()=>{
     warrior.addToInventory('Sword');
     warrior.removeFromInventory('Sword');
     expect(warrior.inventory.length).toBe(0);
+  });
+
+  test('should allow item objects with stats', ()=>{
+    let sword = new Sword();
+    expect(sword.attackDamage).toEqual(2);
+    expect(sword.slot).toEqual('weapon');
   });
 });

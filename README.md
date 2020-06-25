@@ -26,10 +26,10 @@ _This is an attempt at building an RPG browser game. A player should be able to 
 | **Program tracks player inventory** | None | Warrior = {.. inventory = {} ..} |
 | **Program adds items to inventory** | Player picks up sword | Warrior = {.. inventory = {sword} ..} |
 | **Program removes items from inventory** | Player drops sword | Warrior = {.. inventory = {} ..} |
-| **Program allows equipping items** | Player equips sword | Warrior = {.. inventory = {}, equipment = {sword} ..} |
-| **Program allows unequipping items** | Player unequips sword | Warrior = {.. inventory = {sword}, equipment = {} ..} |
 | **Program has item objects that have stats** | None | Sword = {damage = 2, slot = 'weapon'} |
-| **Program adds items to correct slot** | Player equips sword | Warrior = {.. inventory = {}, weapon = {sword} shield = {}..} |
+| **Program allows equipping items to correct slot** | Player equips sword | Warrior = {.. inventory = {}, equipment = {sword} ..} |
+| **Program only allows equipping if of a legal class** | Player equips sword while wizard | Wizard = { .. inventory = {sword} .. equipment = {} ..} |
+| **Program allows unequipping items** | Player unequips sword | Warrior = {.. inventory = {sword}, equipment = {} ..} |
 | **Program swaps items if equipping to a filled slot** | Player equips axe while sword equipped | Warrior = {.. inventory = {sword}, weapon = {axe} ..} |
 | **Program updates abilities based on equipment** | Player attacks while sword equipped | Damage = Damage + 2 |
 

@@ -1,4 +1,4 @@
-export class Character {
+class Character {
   constructor(hp, stamina, strength, intelligence, dexterity, characterClass) {
     this.hp = hp;
     this.maxHP = hp;
