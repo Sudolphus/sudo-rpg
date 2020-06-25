@@ -27,7 +27,7 @@ describe('RPG characters', ()=>{
 
   test('should allow for selected class to be added to the Game', ()=>{
     game.selectClass(warrior);
-    expect(game.characterClass).toBe(warrior);
+    expect(game.characterClass).toMatchObject(warrior);
   });
 
   test('should assign statistics to each class', ()=>{
@@ -84,5 +84,10 @@ describe('RPG characters', ()=>{
   test('should detect if a player is defeated', ()=>{
     warrior.takeDamage(20);
     expect(warrior.isDefeated()).toBe(true);
+  });
+
+  test('using abilites depletes stamina', ()=>{
+    warrior.powerSmash();
+    expect(warrior.stamina).toEqual(9);
   });
 });

@@ -97,9 +97,11 @@ export class Warrior extends Character {
     super(20, 10, 10, 3, 8, 'warrior');
   }
   powerSmash() {
+    this.stamina -= 1;
     return this.strength*2+this.damageBonus;
   }
   doubleStrike() {
+    this.stamina -= 1;
     return (this.strength*.5+this.damageBonus)*2;
   }
 }
@@ -109,9 +111,11 @@ export class Wizard extends Character {
     super(10, 20, 3, 10, 8, 'wizard');
   }
   fireball() {
+    this.stamina -= 1;
     return this.intelligence+this.damageBonus;
   }
   lightningBolt() {
+    this.stamina -= 1;
     return this.intelligence*2+this.damageBonus;
   }
 }
@@ -121,9 +125,11 @@ export class Thief extends Character {
     super(15, 15, 6, 5, 10, 'thief');
   }
   riposte() {
+    this.stamina -= 1;
     return this.dexterity+this.damageBonus;
   }
   sneakyStab() {
+    this.stamina -= 1;
     return this.dexterity+this.damageBonus;
   }
 }

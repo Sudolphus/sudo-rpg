@@ -76,4 +76,10 @@ describe ('RPG Items', ()=> {
     expect(warrior.damageBonus).toEqual(0);
     expect(warrior.protection).toEqual(0);
   });
+
+  test('should update damage based on equipment appropriately', ()=>{
+    warrior.equip(sword);
+    expect(warrior.attack()).toEqual(12);
+    expect(warrior.powerSmash()).toEqual(22);
+  });
 });
