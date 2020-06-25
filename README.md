@@ -1,30 +1,36 @@
-# _{Application Name}_
+# _Sudo's RPG_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _An RPG set in Sudo's Dungeon, 06.24.20_
 
 #### By _**Micheal Hansen**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This is an attempt at building an RPG browser game. A player should be able to build a character, and go through a few encounters to try out the system._
 
 ## Specifications
 
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "10" | Output: "10" |
+| **Program creates a Game object to hold necessary values** | User clicks New Game | Game = {} |
+| **Program allows for a character object** | None | Character = {} |
+| **Program allows for warrior, thief, and wizard object that extend character objects** | None | Warrior = {} |
+| **Program allows user to select a class, and adds that class to the Game object** | User selects Warrior | Game = {playerCharacter = Warrior {}} |
+| **Program sets statistics based on the class** | None | Warrior = {HP = 20, Strength = 10, Intelligence = 3, Dexterity = 8} |
+| **Program sets abilities based on the class** | None | Warrior = {... powerSmash() doubleStrike()} |
 
 
 ## Setup/Installation Requirements
 
 Software Requirements
 1. Internet browser
-2. A code editor like VSCode or Atom to view or edit the codebase.
+2. A code editor like VSCode or Atom to view or edit the codebase
+3. A package manager like Node.js to install the packages, if you wish to develop
 
 Open by downloading:
 1. Download this repository onto your computer by clicking the 'clone or download button'
-2. Double click index.html to open it in your web browser
+2. Open index.html to play the game
+3. Open with your code editor of choice and install the packages if you'd rather develop
 
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
@@ -34,14 +40,14 @@ Open via Bash/GitBash:
 3. Get the necessary packages `npm install`.
 4. Compile the code `npm run build`.
 5. Open index.html in Chrome or preferred browser:
-`open dit/index.html`
+`open dist/index.html`
 
 #### To see my live website go to {GH_PAGES_LINK_HERE}!
 
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_None currently known; most problems are likely because the game is incomplete, as opposed to bugged._
 
 ## Support and contact details
 
@@ -53,9 +59,14 @@ _Please reach out through my GitHub account._
 * _CSS (including Bootstrap)_
 * _JavaScript (including jQuery)_
 * _VSCode_
+* _Node.js (including webpack)_
 
 ### License
 
-MIT License.
-
 Copyright (c) 2020 **_Micheal Hansen_**
+
+_Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to dealin the Software without restriction, including without limitation the rightsto use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:_
+
+_The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software._
+
+_THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE._
