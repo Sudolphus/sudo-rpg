@@ -85,4 +85,10 @@ describe('RPG', ()=>{
     warrior.healDamage(3);
     expect(warrior.hp).toEqual(18);
   });
+
+  test('cap healing at maximum hp', ()=>{
+    warrior.takeDamage(5);
+    warrior.healDamage(12);
+    expect(warrior.hp).toEqual(20);
+  });
 });
