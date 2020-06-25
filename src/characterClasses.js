@@ -49,6 +49,10 @@ export class Character {
   addToInventory(item) {
     this.inventory.push(item);
   }
+
+  removeFromInventory(item) {
+    this.inventory = this.inventory.filter(items => items != item);
+  }
 }
 
 export class Warrior extends Character {

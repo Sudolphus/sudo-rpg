@@ -105,4 +105,10 @@ describe('RPG', ()=>{
     warrior.addToInventory('Sword');
     expect(warrior.inventory[0]).toBe('Sword');
   });
+
+  test('should allow player to drop items from inventory', ()=>{
+    warrior.addToInventory('Sword');
+    warrior.removeFromInventory('Sword');
+    expect(warrior.inventory.length).toBe(0);
+  });
 });
