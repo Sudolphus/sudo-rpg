@@ -109,7 +109,7 @@ describe('RPG', ()=>{
   });
 
   test('should allow item objects with stats', ()=>{
-    expect(sword.attackDamage).toEqual(2);
+    expect(sword.damageBonus).toEqual(2);
     expect(sword.slot).toEqual('weaponHand');
   });
 
@@ -139,4 +139,17 @@ describe('RPG', ()=>{
     expect(warrior.weaponHand).toBe(axe);
     expect(warrior.inventory[0]).toBe(sword);
   });
+
+  test('should update player abilities based on equipment', ()=> {
+    expect(warrior.damageBonus).toEqual(0);
+    expect(warrior.protection).toEqual(0);
+    warrior.equip(sword);
+    warrior.equip(shield);
+    expect(warrior.damageBonus).toEqual(2);
+    expect(warrior.protection).toEqual(2);
+    warrior.unequip(sword);
+    warrior.unequip(shield);
+    expect(warrior.damageBonus).toEqual(0);
+    expect(warrior.protection).toEqual(0);
+  })
 });

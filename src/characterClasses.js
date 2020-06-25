@@ -11,6 +11,8 @@ class Character {
     this.weaponHand = null;
     this.shieldHand = null;
     this.armor = null;
+    this.damageBonus = 0;
+    this.protection = 0;
   }
 
   attack() {
@@ -79,6 +81,8 @@ class Character {
         this.armor = item;
       }
       this.removeFromInventory(item);
+      this.damageBonus += item.damageBonus;
+      this.protection += item.protection;
     }
   }
 
@@ -91,6 +95,8 @@ class Character {
       this.armor = null;
     }
     this.addToInventory(item);
+    this.damageBonus -= item.damageBonus;
+    this.protection -= item.protection;
   }
 }
 
