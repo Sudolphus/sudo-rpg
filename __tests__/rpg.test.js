@@ -75,7 +75,7 @@ describe('RPG', ()=>{
     expect(warrior.attack()).toEqual(10);
   });
 
-  test('should allow characters to take damaged', ()=>{
+  test('should allow characters to take damage', ()=>{
     warrior.takeDamage(5);
     expect(warrior.hp).toEqual(15);
   });

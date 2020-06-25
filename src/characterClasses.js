@@ -23,6 +23,10 @@ export class Character {
     }
     return defense;
   }
+
+  takeDamage(damage) {
+    this.hp -= damage;
+  }
 }
 
 export class Warrior extends Character {
