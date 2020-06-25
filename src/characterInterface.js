@@ -6,7 +6,7 @@ function equipItemHTML(slot, game) {
   if (item === null) {
     itemHTML = `<p><i>None</i></p>`;
   } else {
-    itemHTML = `<p><i>${item.name}</i></p><button class='btn unequipButton' id='unequip${slot}'>`;
+    itemHTML = `<p><i>${item.name}</i></p><button class='btn unequipButton' id='unequip${slot}'>Unequip</button><br>`;
   }
   return itemHTML;
 }
@@ -68,14 +68,19 @@ function attachInventoryListeners(game) {
 export function refreshCharacterInterface(game) {
   const characterInterface = $("#characterInterface");
   characterInterface.empty();
-  characterInterface.append(`<p><strong>${game.characterClass.characterClass.toUpperCase()}</strong></p>`);
-  characterInterface.append(`<p>Items Equipped: </p><ul id='equippedItems'></ul>`);
+  let interfaceHTML = '';
+  interfaceHTML += `<p><strong>${game.characterClass.characterClass.toUpperCase()}</strong></p>`;
+  interfaceHTML += `<p>HP: ${game.characterClass.hp}, Stamina: ${game.characterClass.stamina}`;
+  interfaceHTML += `<div class="row"><div class="col"><p>Items Equipped: </p><ul id='equippedItems'></ul>`;
+  interfaceHTML += `</div>`;
+  interfaceHTML += `<div class='col'><p>Inventory: </p><ul id='inventoryItems'></ul>`;
+  interfaceHTML += `</div></div>`;
+  characterInterface.html(interfaceHTML);
   const equippedItems = $("#equippedItems");
   equippedItems.append(`Weapon Hand: <span id='weaponHand'></span>`);
   equippedItems.append(`Shield Hand: <span id='shieldHand'></span>`);
   equippedItems.append(`Armor: <span id='armor'></span>`);
   listEquippedItems(game);
-  characterInterface.append(`<p>Inventory: </p><ul id='inventoryItems'></ul>`);
   listInventoryItems(game.characterClass.inventory);
   attachEquipListeners(game);
   attachInventoryListeners(game);

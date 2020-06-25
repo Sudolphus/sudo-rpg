@@ -46,7 +46,7 @@ export function startingRoomPassage(game) {
   const weapon = decideWeapon(game.characterClass.characterClass);
   const armor = decideArmor(game.characterClass.characterClass);
   const playerSight = $('#playerSight');
-  playerSight.append(`<li class='${weapon.name}'>A ${weapon.name} <button class='btn pickupItem' id='grab${weapon.name}'></li>`);
-  playerSight.append(`<li class='${armor.name}'>${armor.name} <button class='btn pickupItem' id='grab${armor.name}'></li>`);
+  playerSight.append(`<li class='${weapon.name}'>A ${weapon.name} <button class='btn pickupItem' id='grab${weapon.name}'>Pick up</button></li>`);
+  playerSight.append(`<li class='${armor.name}'>${armor.name} <button class='btn pickupItem' id='grab${armor.name}'>Pick Up</button></li>`);
   attachButtonListeners(game, weapon, armor);
 }
