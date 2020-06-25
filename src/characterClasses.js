@@ -90,6 +90,11 @@ class Character {
     this.damageBonus -= item.damageBonus;
     this.protection -= item.protection;
   }
+
+  usePotion(potion) {
+    this.healDamage(potion.heal);
+    this.stamina += potion.staminaHeal;
+  }
 }
 
 export class Warrior extends Character {

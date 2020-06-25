@@ -7,3 +7,11 @@ export class Equipment {
     this.allowed = allowed;
   }
 }
+
+export class Potion {
+  constructor(name, heal, staminaHeal) {
+    this.name = name;
+    this.heal = heal;
+    this.staminaHeal = staminaHeal;
+  }
+}

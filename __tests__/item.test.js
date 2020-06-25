@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { Equipment } from './../src/items.js';
+import { Equipment, Potion } from './../src/items.js';
 import { Warrior, Wizard } from './../src/characterClasses.js';
 
 describe ('RPG Items', ()=> {
@@ -8,6 +8,8 @@ describe ('RPG Items', ()=> {
   let sword;
   let axe;
   let shield;
+  let healingPotion;
+  let staminaPotion;
 
   beforeEach(()=>{
     warrior = new Warrior();
@@ -15,6 +17,8 @@ describe ('RPG Items', ()=> {
     sword = new Equipment('sword', 2, 0, 'weaponHand', ['warrior', 'thief']);
     shield = new Equipment('shield', 0, 2, 'shieldHand', ['any']);
     axe = new Equipment('axe', 3, 0, 'weaponHand', ['warrior']);
+    healingPotion = new Potion('healingPotion', 5, 0);
+    staminaPotion = new Potion('staminaPotion', 0, 5);
   });
 
   test('should detect if a player has an inventory', ()=>{
@@ -81,5 +85,21 @@ describe ('RPG Items', ()=> {
     warrior.equip(sword);
     expect(warrior.attack()).toEqual(12);
     expect(warrior.powerSmash()).toEqual(22);
+  });
+
+  test('should allow healing potions to heal', ()=>{
+    warrior.takeDamage(10);
+    warrior.usePotion(healingPotion);
+    expect(warrior.hp).toEqual(15);
+    warrior.usePotion(healingPotion);
+    expect(warrior.hp).toEqual(20);
+    warrior.usePotion(healingPotion);
+    expect(warrior.hp).toEqual(20);
+  });
+
+  test('should allow stamina potions to gain stamina', ()=>{
+    warrior.powerSmash();
+    warrior.usePotion(staminaPotion);
+    expect(warrior.stamina).toEqual(14);
   });
 });
