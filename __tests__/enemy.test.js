@@ -27,4 +27,9 @@ describe ('RPG Enemies', ()=>{
   test('enemies should be able to attack', ()=>{
     expect(goblin.attack()).toEqual(5);
   });
+
+  test('enemies can take damage', ()=>{
+    goblin.takeDamage(3);
+    expect(goblin.hp).toEqual(5);
+  });
 });

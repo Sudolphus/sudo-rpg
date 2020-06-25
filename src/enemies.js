@@ -8,4 +8,8 @@ export class Enemy {
   attack() {
     return this.damageValue;
   }
+
+  takeDamage(damage) {
+    this.hp -= damage;
+  }
 }
