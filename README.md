@@ -14,6 +14,7 @@ _This is an attempt at building an RPG browser game. A player should be able to 
 | :-------------     | :------------- | :------------- |
 | **Program creates a Game object to hold necessary values** | User clicks New Game | Game = {} |
 | **Program allows for a character object** | None | Character = {} |
+| **Program assigns basic abilities for all characters** | None | Character = {attack(); block();} |
 | **Program allows for warrior, thief, and wizard object that extend character objects** | None | Warrior = {} |
 | **Program allows user to select a class, and adds that class to the Game object** | User selects Warrior | Game = {playerCharacter = Warrior {}} |
 | **Program sets statistics based on the class** | None | Warrior = {HP = 20, Strength = 10, Intelligence = 3, Dexterity = 8} |
