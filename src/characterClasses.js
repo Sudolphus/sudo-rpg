@@ -9,11 +9,19 @@ export class Character {
   }
 
   attack() {
-    return true;
+    let damage = 0;
+    if (this.strength) {
+      damage += this.strength;
+    }
+    return damage;
   }
 
   block() {
-    return true;
+    let defense = 0;
+    if (this.dexterity) {
+      defense += this.dexterity;
+    }
+    return defense;
   }
 }
 
