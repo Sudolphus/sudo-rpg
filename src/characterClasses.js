@@ -7,6 +7,7 @@ export class Character {
     this.intelligence = intelligence;
     this.dexterity = dexterity;
     this.characterClass = characterClass;
+    this.inventory = [];
   }
 
   attack() {
