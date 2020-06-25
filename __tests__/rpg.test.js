@@ -35,4 +35,9 @@ describe('RPG', ()=>{
     expect(wizard).toBeDefined();
     expect(thief).toBeDefined();
   });
+
+  test('should allow for selected class to be added to the Game', ()=>{
+    game.selectClass('warrior');
+    expect(game.class).toBe('warrior');
+  });
 });
