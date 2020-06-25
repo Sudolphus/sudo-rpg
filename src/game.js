@@ -1,6 +1,7 @@
 export class Game {
   constructor() {
     this.enemies = [];
+    this.room = 0;
   }
 
   selectClass(characterClass) {

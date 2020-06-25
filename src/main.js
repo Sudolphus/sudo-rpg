@@ -5,12 +5,22 @@ import './styles.css';
 import { Game } from '../src/game.js';
 import { Warrior, Wizard, Thief } from '../src/characterClasses.js';
 import { refreshCharacterInterface } from '../src/characterInterface.js';
+import { startingRoomPassage } from '../src/startingRoom.js';
 let game = new Game();
+
+function nextRoomPassage() {
+  $('#roomInterface').empty();
+  if (game.room === 0) {
+    startingRoomPassage(game);
+  }
+}
 
 function buildGameInterface() {
   $("#characterCreationInterface").remove();
-  $("#gameInterface").show();
+  $("#characterInterface").show();
+  $("#roomInterface").show();
   refreshCharacterInterface(game);
+  nextRoomPassage();
 }
 
 function attachCharacterClassListeners() {
