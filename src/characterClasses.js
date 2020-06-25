@@ -71,6 +71,16 @@ class Character {
       }
     }
   }
+
+  unequip(item) {
+    if (this.weaponHand === item) {
+      this.weaponHand = null;
+    } else if (this.shieldHand === item) {
+      this.shieldHand = null;
+    } else if (this.armor === item) {
+      this.armor = null;
+    }
+  }
 }
 
 export class Warrior extends Character {

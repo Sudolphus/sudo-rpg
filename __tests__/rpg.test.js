@@ -122,4 +122,10 @@ describe('RPG', ()=>{
     wizard.equip(sword);
     expect(wizard.weaponHand).toBeNull();
   });
+
+  test('should allow unequippling of items', ()=>{
+    warrior.equip(sword);
+    warrior.unequip(sword);
+    expect(warrior.weaponHand).toBeNull();
+  });
 });
