@@ -1,19 +1,23 @@
 /* eslint-disable no-undef */
 import { Game } from './../src/game.js';
 import { Warrior, Wizard, Thief } from './../src/characterClasses.js';
-import { Sword } from './../src/items.js';
+import { Equipment } from './../src/items.js';
 
 describe('RPG', ()=>{
   let game;
   let warrior;
   let wizard;
   let thief;
+  let sword;
+  let shield;
 
   beforeEach(()=>{
     game = new Game();
     warrior = new Warrior();
     wizard = new Wizard();
     thief = new Thief();
+    sword = new Equipment('sword', 2, 0, 'weaponHand');
+    shield = new Equipment('shield', 0, 2, 'shieldHand');
   });
 
   test('should create a game object', ()=>{
@@ -103,8 +107,14 @@ describe('RPG', ()=>{
   });
 
   test('should allow item objects with stats', ()=>{
-    let sword = new Sword();
     expect(sword.attackDamage).toEqual(2);
-    expect(sword.slot).toEqual('weapon');
+    expect(sword.slot).toEqual('weaponHand');
+  });
+
+  test('should allow items to equip to correct slot', ()=>{
+    warrior.equip(sword);
+    warrior.equip(shield);
+    expect(warrior.weaponHand).toBe(sword);
+    expect(warrior.shieldHand).toBe(shield);
   });
 });
