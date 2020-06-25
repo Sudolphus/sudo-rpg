@@ -74,4 +74,9 @@ describe('RPG', ()=>{
   test('ensure that each character inherited abilities properly', ()=>{
     expect(warrior.attack()).toEqual(10);
   });
+
+  test('should allow characters to take damaged', ()=>{
+    warrior.takeDamage(5);
+    expect(warrior.hp).toEqual(15);
+  });
 });
