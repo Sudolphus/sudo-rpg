@@ -15,15 +15,15 @@ body {
 
 #gameInterface {
   display: none;
-  height: 100%;
-  width: 100%;
+  height: 100vw;
+  width: 100vw;
 }
 
 #characterInterface {
   border-right: .5px solid white;
-  height: 100%;
+  height: 100vh;
 }
 
 #roomInterface {
-  height: 100%;
+  height: 100vh;
 }

@@ -4,11 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { Game } from '../src/game.js';
 import { Warrior, Wizard, Thief } from '../src/characterClasses.js';
+import { refreshCharacterInterface } from '../src/characterInterface.js';
 let game = new Game();
 
 function buildGameInterface() {
   $("#characterCreationInterface").remove();
   $("#gameInterface").show();
+  refreshCharacterInterface(game);
 }
 
 function attachCharacterClassListeners() {
