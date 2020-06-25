@@ -1,6 +1,7 @@
 export class Character {
   constructor(hp, stamina, strength, intelligence, dexterity, characterClass) {
     this.hp = hp;
+    this.maxHP = hp;
     this.stamina = stamina;
     this.strength = strength;
     this.intelligence = intelligence;
@@ -29,7 +30,11 @@ export class Character {
   }
 
   healDamage(heal) {
-    this.hp += heal;
+    if (this.hp + heal >= this.maxHP) {
+      this.hp = this.maxHP;
+    } else {
+      this.hp += heal;
+    }
   }
 }
 
