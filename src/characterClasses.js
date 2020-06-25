@@ -8,6 +8,9 @@ class Character {
     this.dexterity = dexterity;
     this.characterClass = characterClass;
     this.inventory = [];
+    this.weaponHand = null;
+    this.shieldHand = null;
+    this.armor = null;
   }
 
   attack() {
@@ -52,6 +55,19 @@ class Character {
 
   removeFromInventory(item) {
     this.inventory = this.inventory.filter(items => items != item);
+  }
+
+  equip(item) {
+    switch (item.slot) {
+    case 'weaponHand':
+      this.weaponHand = item;
+      break;
+    case 'shieldHand':
+      this.shieldHand = item;
+      break;
+    case 'armor':
+      this.armor = item;
+    }
   }
 }
 
