@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Game } from './../src/game.js';
 
 describe('RPG', ()=>{
