@@ -94,6 +94,7 @@ class Character {
   usePotion(potion) {
     this.healDamage(potion.heal);
     this.stamina += potion.staminaHeal;
+    this.inventory = this.inventory.filter(items => items != potion);
   }
 }
 

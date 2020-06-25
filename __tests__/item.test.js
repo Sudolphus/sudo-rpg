@@ -102,4 +102,19 @@ describe ('RPG Items', ()=> {
     warrior.usePotion(staminaPotion);
     expect(warrior.stamina).toEqual(14);
   });
+
+  test('potions should be removed from inventory when used', ()=>{
+    warrior.addToInventory(healingPotion);
+    warrior.usePotion(healingPotion);
+    expect(warrior.inventory.includes(healingPotion)).toBe(false);
+  });
+
+  test('only the used potion should be removed from inventory when used', ()=>{
+    let healingPotion2 = new Potion('healingPotion', 5, 0);
+    warrior.addToInventory(healingPotion);
+    warrior.addToInventory(healingPotion2);
+    warrior.usePotion(healingPotion);
+    expect(warrior.inventory.includes(healingPotion)).toBe(false);
+    expect(warrior.inventory.includes(healingPotion2)).toBe(true);
+  });
 });

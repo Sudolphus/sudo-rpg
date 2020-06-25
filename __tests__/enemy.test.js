@@ -35,4 +35,12 @@ describe ('RPG Enemies', ()=>{
     goblin.takeDamage(8, game);
     expect(game.enemies.length).toEqual(0);
   });
+
+  test('should remove only the defeated enemy, and not similar enemies', ()=>{
+    let goblin2 = new Enemy('goblin', 5, 8);
+    game.addEnemy(goblin2);
+    goblin.takeDamage(8, game);
+    expect(game.enemies.length).toEqual(1);
+    expect(game.enemies[0]).toMatchObject(goblin2);
+  });
 });
