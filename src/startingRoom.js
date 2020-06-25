@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import { Equipment } from './items.js';
 import { refreshCharacterInterface } from './characterInterface.js';
+// import { nextRoomPassage } from './main.js';
 
 function decideWeapon(characterClass) {
   let weapon;
@@ -37,6 +38,10 @@ function attachButtonListeners(game, weapon, armor) {
     $(`.${itemName}`).remove();
     refreshCharacterInterface(game);
   });
+  // $('#playerSight').on('click', '.nextRoom', function() {
+  //   game.room = game.room + 1;
+  //   nextRoomPassage();
+  // });
 }
 
 export function startingRoomPassage(game) {
@@ -48,5 +53,6 @@ export function startingRoomPassage(game) {
   const playerSight = $('#playerSight');
   playerSight.append(`<li class='${weapon.name}'>A ${weapon.name} <button class='btn pickupItem' id='grab${weapon.name}'>Pick up</button></li>`);
   playerSight.append(`<li class='${armor.name}'>${armor.name} <button class='btn pickupItem' id='grab${armor.name}'>Pick Up</button></li>`);
+  playerSight.append(`<li>A door to the next room <button class='btn nextRoom'>Onward!</button></li>`);
   attachButtonListeners(game, weapon, armor);
 }

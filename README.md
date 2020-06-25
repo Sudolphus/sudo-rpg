@@ -51,20 +51,17 @@ Open by downloading:
 
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
-`git clone {PUT_REPO_HERE}`
-2. Navigate into the `{NAME_OF_DIRECTORY}` directory in Visual Studio Code or preferred text editor
+`git clone https://github.com/Sudolphus/sudo-rpg`
+2. Navigate into the `sudo-rpg` directory in Visual Studio Code or preferred text editor
 `code .`
 3. Get the necessary packages `npm install`.
 4. Compile the code `npm run build`.
 5. Open index.html in Chrome or preferred browser:
 `open dist/index.html`
 
-#### To see my live website go to {GH_PAGES_LINK_HERE}!
-
-
 ## Known Bugs
 
-_None currently known; most problems are likely because the game is incomplete, as opposed to bugged._
+_Items don't properly delete when picked up, allowing infinite duping. The button to go to the second room with the first actual enemy doesn't currently work._
 
 ## Support and contact details
 

@@ -6,12 +6,15 @@ import { Game } from '../src/game.js';
 import { Warrior, Wizard, Thief } from '../src/characterClasses.js';
 import { refreshCharacterInterface } from '../src/characterInterface.js';
 import { startingRoomPassage } from '../src/startingRoom.js';
+import { firstRoomPassage } from './firstRoom.js';
 let game = new Game();
 
 function nextRoomPassage() {
   $('#roomInterface').empty();
   if (game.room === 0) {
     startingRoomPassage(game);
+  } else if (game.room === 1) {
+    firstRoomPassage(game);
   }
 }
 
